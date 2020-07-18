@@ -22,6 +22,7 @@ const SignInAndJoin = styled.div`
   color: #fff;
   & > button {
     padding: 0 10px;
+    font-size: 12px;
   }
   & > button:nth-of-type(1):after {
     content: "";
@@ -30,7 +31,7 @@ const SignInAndJoin = styled.div`
     background: #fff;
     position: absolute;
     right: 0;
-    top: 21px;
+    top: 16px;
   }
 `;
 
@@ -51,8 +52,12 @@ export default function Header() {
     <Box h={52} bgColor="#202020" borderBottom="1px solid #393939">
       <Container h={52} maxW={1200} pos="relative">
         <SignInAndJoin>
-          <Button leftIcon={<FaSignInAlt />}>登录</Button>
-          <Button leftIcon={<BsFillPersonFill />}>注册</Button>
+          <Button colorScheme="transparent" leftIcon={<FaSignInAlt />}>
+            登录
+          </Button>
+          <Button colorScheme="transparent" leftIcon={<BsFillPersonFill />}>
+            注册
+          </Button>
         </SignInAndJoin>
         <Image css={logo} src="/images/logo.png" />
         <Search>
