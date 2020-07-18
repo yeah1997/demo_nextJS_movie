@@ -22,6 +22,9 @@ const CarouselItem = styled.div`
       width: 450px;
     }
   }
+  & > img {
+    filter: brightness(50%);
+  }
 `;
 
 const swiperContainer = css`
@@ -64,29 +67,9 @@ export default function Swiper() {
         </CarouselItem>
         <CarouselItem>
           <img src="/images/2.jpg" />
-          <Box>
-            <Heading as="h2" size="lg">
-              KING IN BLACK
-            </Heading>
-            <Text>
-              The next shocking chapter in Donny Cates and Ryan Stegman's Venom
-              Saga is revealed!
-            </Text>
-            <Button colorScheme="red">CHECK DETAIL</Button>
-          </Box>
         </CarouselItem>
         <CarouselItem>
           <img src="/images/3.jpg" />
-          <Box>
-            <Heading as="h2" size="lg">
-              KING IN BLACK
-            </Heading>
-            <Text>
-              The next shocking chapter in Donny Cates and Ryan Stegman's Venom
-              Saga is revealed!
-            </Text>
-            <Button colorScheme="red">CHECK DETAIL</Button>
-          </Box>
         </CarouselItem>
       </Carousel>
     </>
