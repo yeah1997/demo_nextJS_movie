@@ -3,7 +3,6 @@ import Swiper, { loadSwiper } from "../components/Swiper";
 import Movie, { loadMovie } from "../components/Movie";
 
 export default function Home({ swiper, movie }) {
-  console.log(movie);
   return (
     <Layout>
       <Swiper data={swiper} />

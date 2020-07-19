@@ -17,7 +17,6 @@ const DetailContainer = css`
 `;
 
 export default function Detail({ detail }) {
-  console.log(detail);
   return (
     <Layout>
       <Box maxW={1200} mx="auto" mt="70px">
