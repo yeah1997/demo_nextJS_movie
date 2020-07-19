@@ -3,6 +3,8 @@ import Head from "next/head";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Box, Heading, Text, Button } from "@chakra-ui/core";
+import axios from "axios";
+import { baseURL } from "../axiosConfig";
 
 const CarouselItem = styled.div`
   position: relative;
@@ -40,7 +42,7 @@ const swiperContainer = css`
   }
 `;
 
-export default function Swiper() {
+export default function Swiper({ data }) {
   return (
     <>
       <Head>
@@ -52,26 +54,25 @@ export default function Swiper() {
         showIndicators={false}
         showStatus={false}
       >
-        <CarouselItem>
-          <img src="/images/1.jpg" />
-          <Box>
-            <Heading as="h2" size="lg">
-              KING IN BLACK
-            </Heading>
-            <Text>
-              The next shocking chapter in Donny Cates and Ryan Stegman's Venom
-              Saga is revealed!
-            </Text>
-            <Button colorScheme="red">CHECK DETAIL</Button>
-          </Box>
-        </CarouselItem>
-        <CarouselItem>
-          <img src="/images/2.jpg" />
-        </CarouselItem>
-        <CarouselItem>
-          <img src="/images/3.jpg" />
-        </CarouselItem>
+        {data.map(swiper => (
+          <CarouselItem key={swiper.id}>
+            <img src={swiper.url} />
+            <Box>
+              <Heading as="h2" size="lg">
+                {swiper.title}
+              </Heading>
+              <Text>
+                {swiper.description}
+              </Text>
+              <Button colorScheme="red">CHECK DETAIL</Button>
+            </Box>
+          </CarouselItem>
+        ))}
       </Carousel>
     </>
   );
+}
+
+export function loadSwiper() {
+  return axios.get("/api/swiper", { baseURL });
 }
