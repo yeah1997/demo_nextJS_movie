@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { Box, Heading, Text, Button } from "@chakra-ui/core";
 import axios from "axios";
 import { baseURL } from "../axiosConfig";
+import Link from 'next/link';
 
 const CarouselItem = styled.div`
   position: relative;
@@ -64,7 +65,9 @@ export default function Swiper({ data }) {
               <Text>
                 {swiper.description}
               </Text>
-              <Button colorScheme="red">CHECK DETAIL</Button>
+              <Button colorScheme="red">
+                <Link href="/detail/[id]" as={`/detail/${swiper.vid}`}><a>CHECK DETAIL</a></Link>
+              </Button>
             </Box>
           </CarouselItem>
         ))}
