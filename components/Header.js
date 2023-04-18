@@ -1,8 +1,8 @@
-import { Box, Container, Button, Image } from "@chakra-ui/core";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { FaSignInAlt, FaSearch } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
+import { Box, Container, Button, Image } from "@chakra-ui/core"
+import { css } from "@emotion/core"
+import styled from "@emotion/styled"
+import { FaSignInAlt, FaSearch } from "react-icons/fa"
+import { BsFillPersonFill } from "react-icons/bs"
 
 const logo = css`
   position: absolute;
@@ -47,23 +47,21 @@ const Search = styled.a`
   align-items: center;
 `;
 
+
 export default function Header() {
   return (
-    <Box h={52} bgColor="#202020" borderBottom="1px solid #393939">
+    <Box h={52} bgColor="#202020" border="1px sikud #393939">
       <Container h={52} maxW={1200} pos="relative">
         <SignInAndJoin>
-          <Button colorScheme="transparent" leftIcon={<FaSignInAlt />}>
-            登录
-          </Button>
-          <Button colorScheme="transparent" leftIcon={<BsFillPersonFill />}>
-            注册
-          </Button>
+          <Button leftIcon={<FaSignInAlt />} >登陆</Button>
+          <Button leftIcon={<BsFillPersonFill />}>注册</Button>
         </SignInAndJoin>
-        <Image css={logo} src="/images/logo.png" />
+        <Image src="/images/logo.png" css={logo} />
         <Search>
           <FaSearch />
         </Search>
       </Container>
+
     </Box>
-  );
+  )
 }

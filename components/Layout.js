@@ -1,10 +1,12 @@
-import Header from './Header';
-import Navigation from './Navigation';
+import Header from "./Header";
+import Navigation from "./Navigation";
 
-export default function Layout ({children}) {
-  return <>
-    <Header />
-    <Navigation />
-    {children}
-  </>
+export default function Layout({ children }) {
+    return (
+        <>
+            <Header></Header>
+            <Navigation></Navigation>
+            {children}
+        </>
+    )
 }
